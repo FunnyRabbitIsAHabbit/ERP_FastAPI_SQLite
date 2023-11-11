@@ -49,7 +49,7 @@ def get_session():
 def as_form(cls: Type[BetterBaseModel]):
     new_parameters = []
 
-    for field_name, model_field in cls.__fields__.items():
+    for field_name, model_field in cls.model_fields.items():
         model_field: ModelField  # type: ignore
 
         new_parameters.append(
